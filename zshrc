@@ -48,7 +48,7 @@ ZSH_THEME="awesomepanda"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git nvm)
+plugins=(git nvm cpanm)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -83,6 +83,10 @@ source $ZSH/oh-my-zsh.sh
 
 # NIGEL UPDATES
 
+if [[ -e $HOME/.bash_aliases ]]; then
+    source $HOME/.bash_aliases
+fi
+
 # plenv
 export PATH="$HOME/.plenv/bin:$PATH"
 eval "$(plenv init - zsh)"
@@ -94,3 +98,6 @@ eval "$(direnv hook zsh)"
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 
+# rakudobrew
+#export PATH=
+eval "$(/home/nfg/.rakudobrew/bin/rakudobrew init -)"
