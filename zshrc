@@ -87,6 +87,10 @@ if [[ -e $HOME/.bash_aliases ]]; then
     source $HOME/.bash_aliases
 fi
 
+if [[ -e $HOME/.environment ]]; then
+    source $HOME/.environment
+fi
+
 # plenv
 export PATH="$HOME/.plenv/bin:$PATH"
 eval "$(plenv init - zsh)"
