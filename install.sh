@@ -7,13 +7,16 @@ cd "$( dirname "${BASH_SOURCE[0]}" )"
 SOURCE=`pwd`
 TARGET=$HOME
 
-ls | grep -v -E "(install.sh|README)" | while read -r I;
+# From ./filename to filename
+find -type f | sed -e 's/^\.\///' | grep -v -E "^(.git|install.sh|README.md)" | while read -r I;
 do
     DEST="$TARGET/.$I"
     if [[ -e "$DEST" ]]; then
         echo "Skipping $I"
     else
-        ln -s $SOURCE/$I $TARGET/.$I;
+        DIR=`dirname $DEST`
+        mkdir -p $DIR
+        ln -s $SOURCE/$I $DEST
     fi
 done
 

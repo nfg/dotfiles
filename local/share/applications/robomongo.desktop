@@ -1,0 +1,11 @@
+[Desktop Entry]
+Encoding=UTF-8
+Version=1.0
+Name=Robomongo
+Comment=MongoDB client
+Exec=/home/nfg/bin/robomongo
+Icon=robomongo
+Terminal=false
+Type=Application
+Categories=Application;Development;
+X-Desktop-File-Install-Version=0.01
