@@ -12,7 +12,11 @@ find -type f | sed -e 's/^\.\///' | grep -v -E "^(.git|install.sh|README.md)" | 
 do
     DEST="$TARGET/.$I"
     if [[ -e "$DEST" ]]; then
-        echo "Skipping $I"
+        if [[ "$DEST" -ef $I ]]; then
+            echo "Already installed: $I"
+        else
+            echo "Existing $I does not match repo"
+        fi
     else
         DIR=`dirname $DEST`
         mkdir -p $DIR
