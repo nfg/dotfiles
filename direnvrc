@@ -1,0 +1,7 @@
+# Lets you add a command like "use python 3.6.0" to auto-use python version
+use_python() {
+  local python_root=$HOME/.pyenv/versions/$1
+  load_prefix "$python_root"
+  layout_python "$python_root/bin/python"
+}
+

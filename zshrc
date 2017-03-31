@@ -102,6 +102,12 @@ eval "$(direnv hook zsh)"
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 
+# pyenv
+# git clone https://github.com/pyenv/pyenv.git ~/.pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+
 # rakudobrew
 #export PATH=
 eval "$(/home/nfg/.rakudobrew/bin/rakudobrew init -)"
