@@ -1,0 +1,15 @@
+" test
+set nonumber
+
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+set expandtab
+
+set wrap
+
+set list listchars=tab:\ \ ,trail:.
+"set bg=light
+set bg=dark
+
+au BufNewFile,BufRead *.tt set filetype=html
