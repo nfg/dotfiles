@@ -114,3 +114,6 @@ eval "$(/home/nfg/.rakudobrew/bin/rakudobrew init -)"
 
 # fzf https://github.com/junegunn/fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# Add yarn
+[ -e "$HOME/.yarn/bin" ] && export PATH="$HOME/.yarn/bin:$PATH"
