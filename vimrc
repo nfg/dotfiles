@@ -21,6 +21,8 @@ Plugin 'vim-perl/vim-perl'
 
 Plugin 'https://github.com/junegunn/fzf.vim.git'
 
+Plugin 'https://github.com/jtratner/vim-flavored-markdown.git'
+
 "autocmd FileType perl let b:dispatch = 'prove %'
 
 " All of your plugins must be added before the following line
