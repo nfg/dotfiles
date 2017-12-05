@@ -111,3 +111,6 @@ eval "$(pyenv init -)"
 # rakudobrew
 #export PATH=
 eval "$(/home/nfg/.rakudobrew/bin/rakudobrew init -)"
+
+# fzf https://github.com/junegunn/fzf
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
