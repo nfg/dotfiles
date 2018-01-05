@@ -112,6 +112,12 @@ eval "$(pyenv init -)"
 #export PATH=
 eval "$(/home/nfg/.rakudobrew/bin/rakudobrew init -)"
 
+# goenv
+# git clone https://github.com/syndbg/goenv.git ~/.goenv
+export GOENV_ROOT="$HOME/.goenv"
+export PATH="$GOENV_ROOT/bin:$PATH"
+eval "$(goenv init -)"
+
 # fzf https://github.com/junegunn/fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
