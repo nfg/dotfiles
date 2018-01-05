@@ -6,6 +6,9 @@ set shiftwidth=4
 set softtabstop=4
 set expandtab
 
+autocmd FileType json setlocal shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType yaml setlocal shiftwidth=2 tabstop=2 softtabstop=2
+
 set wrap
 
 set list listchars=tab:\ \ ,trail:.
