@@ -91,6 +91,10 @@ if [[ -e $HOME/.environment ]]; then
     source $HOME/.environment
 fi
 
+# Add my local /bin to PATH
+# For one thing, that's where I have direnv installed.
+export PATH="$HOME/bin:$PATH"
+
 # plenv
 export PATH="$HOME/.plenv/bin:$PATH"
 eval "$(plenv init - zsh)"
