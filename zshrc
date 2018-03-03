@@ -96,31 +96,41 @@ fi
 export PATH="$HOME/bin:$PATH"
 
 # plenv
-export PATH="$HOME/.plenv/bin:$PATH"
-eval "$(plenv init - zsh)"
+if [[ -e "$HOME/.plenv" ]]; then
+    export PATH="$HOME/.plenv/bin:$PATH"
+    eval "$(plenv init - zsh)"
+fi
 
 # direnv
 eval "$(direnv hook zsh)"
 
 # rbenv
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
+if [ -e "$HOME/.rbenv" ]; then
+    export PATH="$HOME/.rbenv/bin:$PATH"
+    eval "$(rbenv init -)"
+fi
 
 # pyenv
-# git clone https://github.com/pyenv/pyenv.git ~/.pyenv
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
+if [ -e "$HOME/.pyenv" ]; then
+    # git clone https://github.com/pyenv/pyenv.git ~/.pyenv
+    export PYENV_ROOT="$HOME/.pyenv"
+    export PATH="$PYENV_ROOT/bin:$PATH"
+    eval "$(pyenv init -)"
+fi
 
 # rakudobrew
 #export PATH=
-eval "$(/home/nfg/.rakudobrew/bin/rakudobrew init -)"
+if [[ -e "$HOME/.rakudobrew" ]]; then
+    eval "$(/home/nfg/.rakudobrew/bin/rakudobrew init -)"
+fi
 
 # goenv
-# git clone https://github.com/syndbg/goenv.git ~/.goenv
-export GOENV_ROOT="$HOME/.goenv"
-export PATH="$GOENV_ROOT/bin:$PATH"
-eval "$(goenv init -)"
+if [ -e "$HOME/.goenv" ]; then
+    # git clone https://github.com/syndbg/goenv.git ~/.goenv
+    export GOENV_ROOT="$HOME/.goenv"
+    export PATH="$GOENV_ROOT/bin:$PATH"
+    eval "$(goenv init -)"
+fi
 
 # fzf https://github.com/junegunn/fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
