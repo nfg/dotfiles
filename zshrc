@@ -108,26 +108,24 @@ if [[ -e "$HOME/.rbenv" ]]; then
     eval "$(rbenv init -)"
 fi
 
+# pyenv - git clone https://github.com/pyenv/pyenv.git ~/.pyenv
 if [[ -e "$HOME/.pyenv" ]]; then
-    # pyenv
-    # git clone https://github.com/pyenv/pyenv.git ~/.pyenv
     export PYENV_ROOT="$HOME/.pyenv"
     export PATH="$PYENV_ROOT/bin:$PATH"
     eval "$(pyenv init -)"
 fi
 
+# rakudobrew
 if [[ -e "$HOME/.rakudobrew" ]]; then
-    # rakudobrew
-    #export PATH=
     eval "$(/home/nfg/.rakudobrew/bin/rakudobrew init -)"
 fi
 
+# goenv - git clone https://github.com/syndbg/goenv.git ~/.goenv
 if [ -e "$HOME/.goenv" ]; then
-    # goenv
-    # git clone https://github.com/syndbg/goenv.git ~/.goenv
     export GOENV_ROOT="$HOME/.goenv"
     export PATH="$GOENV_ROOT/bin:$PATH"
     eval "$(goenv init -)"
+    export PATH="$HOME/go/bin:$PATH"
 fi
 
 # fzf https://github.com/junegunn/fzf
