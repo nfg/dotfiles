@@ -135,3 +135,9 @@ fi
 
 # Add yarn
 [ -e "$HOME/.yarn/bin" ] && export PATH="$HOME/.yarn/bin:$PATH"
+
+# nodenv
+if [[ -e "$HOME/.nodenv/bin" ]]; then
+   export PATH="$HOME/.nodenv/bin:$PATH"
+   eval "$(nodenv init -)"
+fi
