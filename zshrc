@@ -105,14 +105,13 @@ fi
 eval "$(direnv hook zsh)"
 
 # rbenv
-if [ -e "$HOME/.rbenv" ]; then
+if [[ -e "$HOME/.rbenv" ]]; then
     export PATH="$HOME/.rbenv/bin:$PATH"
     eval "$(rbenv init -)"
 fi
 
-# pyenv
-if [ -e "$HOME/.pyenv" ]; then
-    # git clone https://github.com/pyenv/pyenv.git ~/.pyenv
+# pyenv - git clone https://github.com/pyenv/pyenv.git ~/.pyenv
+if [[ -e "$HOME/.pyenv" ]]; then
     export PYENV_ROOT="$HOME/.pyenv"
     export PATH="$PYENV_ROOT/bin:$PATH"
     eval "$(pyenv init -)"
@@ -124,9 +123,8 @@ if [[ -e "$HOME/.rakudobrew" ]]; then
     eval "$(/home/nfg/.rakudobrew/bin/rakudobrew init -)"
 fi
 
-# goenv
-if [ -e "$HOME/.goenv" ]; then
-    # git clone https://github.com/syndbg/goenv.git ~/.goenv
+# goenv - git clone https://github.com/syndbg/goenv.git ~/.goenv
+if [[ -e "$HOME/.goenv" ]]; then
     export GOENV_ROOT="$HOME/.goenv"
     export PATH="$GOENV_ROOT/bin:$PATH"
     eval "$(goenv init -)"
