@@ -83,6 +83,10 @@ source $ZSH/oh-my-zsh.sh
 
 # NIGEL UPDATES
 
+if [[ -e "$HOME/.misc/tmuxinator.zsh" ]]; then
+    source $HOME/.misc/tmuxinator.zsh
+fi
+
 if [[ -e $HOME/.bash_aliases ]]; then
     source $HOME/.bash_aliases
 fi
