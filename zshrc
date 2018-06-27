@@ -96,8 +96,10 @@ fi
 export PATH="$HOME/bin:$PATH"
 
 # plenv
-export PATH="$HOME/.plenv/bin:$PATH"
-eval "$(plenv init - zsh)"
+if [[ -e "$HOME/.plenv" ]]; then
+    export PATH="$HOME/.plenv/bin:$PATH"
+    eval "$(plenv init - zsh)"
+fi
 
 # direnv
 eval "$(direnv hook zsh)"
@@ -121,7 +123,7 @@ if [[ -e "$HOME/.rakudobrew" ]]; then
 fi
 
 # goenv - git clone https://github.com/syndbg/goenv.git ~/.goenv
-if [ -e "$HOME/.goenv" ]; then
+if [[ -e "$HOME/.goenv" ]]; then
     export GOENV_ROOT="$HOME/.goenv"
     export PATH="$GOENV_ROOT/bin:$PATH"
     eval "$(goenv init -)"
@@ -133,3 +135,9 @@ fi
 
 # Add yarn
 [ -e "$HOME/.yarn/bin" ] && export PATH="$HOME/.yarn/bin:$PATH"
+
+# nodenv
+if [[ -e "$HOME/.nodenv/bin" ]]; then
+   export PATH="$HOME/.nodenv/bin:$PATH"
+   eval "$(nodenv init -)"
+fi
