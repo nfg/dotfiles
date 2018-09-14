@@ -142,6 +142,8 @@ fi
 
 # nodenv
 if [[ -e "$HOME/.nodenv/bin" ]]; then
-   export PATH="$HOME/.nodenv/bin:$PATH"
-   eval "$(nodenv init -)"
+    unset NPM_CONFIG_PREFIX
+    unset NODE_PREFIX
+    export PATH="$HOME/.nodenv/bin:$PATH"
+    eval "$(nodenv init -)"
 fi
