@@ -25,6 +25,14 @@ Plugin 'https://github.com/jtratner/vim-flavored-markdown.git'
 
 Plugin 'Vimjas/vim-python-pep8-indent'
 
+Plugin 'leafgarland/typescript-vim'
+
+" Eh, not the greatest.
+" Plugin 'moll/vim-node'
+
+" https://github.com/pangloss/vim-javascript
+Plugin 'pangloss/vim-javascript'
+
 "autocmd FileType perl let b:dispatch = 'prove %'
 
 " All of your plugins must be added before the following line
