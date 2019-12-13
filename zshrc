@@ -121,10 +121,11 @@ if [[ -e "$HOME/.pyenv" ]]; then
     eval "$(pyenv init -)"
 fi
 
-# rakudobrew
-if [[ -e "$HOME/.rakudobrew" ]]; then
-    eval "$(/home/nfg/.rakudobrew/bin/rakudobrew init -)"
-fi
+## rakudobrew
+# Disabled for now -- it screws up my path for plenv. :(
+#if [[ -e "$HOME/.rakudobrew" ]]; then
+#    eval "$(/home/nfg/.rakudobrew/bin/rakudobrew init Zsh)"
+#fi
 
 # goenv - git clone https://github.com/syndbg/goenv.git ~/.goenv
 if [[ -e "$HOME/.goenv" ]]; then
