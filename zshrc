@@ -99,6 +99,11 @@ fi
 # For one thing, that's where I have direnv installed.
 export PATH="$HOME/bin:$PATH"
 
+# rakudobrew
+if [[ -e "$HOME/.rakudobrew" ]]; then
+    eval "$(/home/nfg/.rakudobrew/bin/rakudobrew init Zsh)"
+fi
+
 # plenv
 if [[ -e "$HOME/.plenv" ]]; then
     export PATH="$HOME/.plenv/bin:$PATH"
@@ -120,12 +125,6 @@ if [[ -e "$HOME/.pyenv" ]]; then
     export PATH="$PYENV_ROOT/bin:$PATH"
     eval "$(pyenv init -)"
 fi
-
-## rakudobrew
-# Disabled for now -- it screws up my path for plenv. :(
-#if [[ -e "$HOME/.rakudobrew" ]]; then
-#    eval "$(/home/nfg/.rakudobrew/bin/rakudobrew init Zsh)"
-#fi
 
 # goenv - git clone https://github.com/syndbg/goenv.git ~/.goenv
 if [[ -e "$HOME/.goenv" ]]; then
