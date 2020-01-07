@@ -5,3 +5,23 @@ use_python() {
   layout_python "$python_root/bin/python"
 }
 
+# Lets you add a command like "use plenv 5.24.3" to auto-use perl version
+# It'll also install all dependencies to local
+use_plenv() {
+  local perl_root=$HOME/.plenv/versions/$1
+  local local_dir="$PWD/local"
+
+  PATH_add "$perl_root/bin"
+  PATH_add "$local_dir/bin"
+
+  path_add PLENV_HOOK_PATH "$HOME/.plenv/plenv.d"
+
+  export PLENV_ROOT="$HOME/.plenv"
+  export PLENV_VERSION=$1
+
+  export LOCAL_LIB_DIR="$local_dir"
+  export PERL5LIB="$local_dir/lib/perl5"
+  export PERL_MB_OPT="--install_base '$local_dir'"
+  export PERL_MM_OPT="INSTALL_BASE=$local_dir"
+  export PERL_LOCAL_LIB_ROOT="$local_dir"
+}
